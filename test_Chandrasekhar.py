@@ -1,6 +1,7 @@
 from Chandrasekhar import G
 import numpy as np
 from numpy.testing import assert_allclose
+from hypothesis import given, strategies as st
 
 
 def test_known_values_Chandrasekhar_G():
@@ -46,3 +47,11 @@ def test_regression_G():
     )
 
     assert_allclose(y, stored_values)
+
+
+@given(
+    x=st.floats(),
+)
+def test_properties_G(x):
+    result = G(x)
+    assert np.isfinite(result)

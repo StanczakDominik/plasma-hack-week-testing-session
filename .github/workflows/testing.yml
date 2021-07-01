@@ -18,6 +18,6 @@ jobs:
       with:
         python-version: 3.9
     - name: Install Python dependencies
-      run: python -m pip install pytest scipy numpy
+      run: python -m pip install pytest scipy numpy hypothesis
     - name: Run tests
       run: pytest
