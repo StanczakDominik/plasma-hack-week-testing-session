@@ -8,10 +8,10 @@ def test_known_values_Chandrasekhar_G():
 
     small_x = 1e-16
     assert np.isclose(G(small_x), 0)
-    assert isinstance(G(small_x), float)
+    assert isinstance(G(small_x), np.ndarray)
 
     assert np.isclose(G(0), 0)
-    assert isinstance(G(0), float)
+    assert isinstance(G(0), np.ndarray)
 
 def test_known_values_as_numpy_array_Chandrasekhar_G():
     x = np.array([1e30, 1e-16, 0])
